@@ -37,6 +37,40 @@
     --sidebar-border: 225 10% 14%;
     --sidebar-ring: 43 65% 52%;
   }
+
+  :root.theme-light {
+    --background: 40 20% 98%;
+    --foreground: 222 25% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 12%;
+    --primary: 43 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 12% 92%;
+    --secondary-foreground: 222 20% 20%;
+    --muted: 40 10% 94%;
+    --muted-foreground: 215 10% 45%;
+    --accent: 40 12% 92%;
+    --accent-foreground: 222 25% 15%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 85%;
+    --input: 220 10% 90%;
+    --ring: 43 65% 45%;
+
+    --gold-light: 43 70% 65%;
+    --gold-dark: 38 60% 40%;
+
+    --sidebar-background: 40 18% 96%;
+    --sidebar-foreground: 222 20% 20%;
+    --sidebar-primary: 43 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 12% 92%;
+    --sidebar-accent-foreground: 222 20% 20%;
+    --sidebar-border: 220 10% 85%;
+    --sidebar-ring: 43 65% 45%;
+  }
 }
 
 @layer base {
@@ -89,12 +123,28 @@
     -webkit-backdrop-filter: blur(12px);
   }
 
+  .theme-light .glass {
+    background: hsl(0 0% 100% / 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .theme-light .glass-light {
+    background: hsl(0 0% 100% / 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   .card-hover {
     @apply transition-all duration-500 ease-out;
   }
   .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 60px -15px hsl(43 65% 52% / 0.15);
+  }
+
+  .hero-canvas {
+    pointer-events: none;
   }
 
   .section-reveal {
@@ -116,6 +166,15 @@
     );
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
+  }
+
+  .theme-light .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(0 0% 96%) 0%,
+      hsl(0 0% 92%) 50%,
+      hsl(0 0% 96%) 100%
+    );
   }
 }
 
@@ -178,4 +237,14 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(43 65% 52%);
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: hsl(0 0% 96%);
+}
+.theme-light ::-webkit-scrollbar-thumb {
+  background: hsl(220 10% 70%);
+}
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: hsl(43 65% 45%);
 }
