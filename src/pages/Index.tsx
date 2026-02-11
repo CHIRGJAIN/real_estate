@@ -4,11 +4,12 @@ import { ArrowRight, Home, Key, Building2, Briefcase, Scale, Wallet, BadgeCheck,
 import { Button } from '@/components/ui/button';
 import Layout from '@/components/Layout';
 import HeroSearch from '@/components/HeroSearch';
-import HeroScene from '@/components/HeroScene';
 import PropertyCard from '@/components/PropertyCard';
 import StatsCounter from '@/components/StatsCounter';
 import { useProperties } from '@/hooks/useProperties';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+
+const HERO_IMAGE = '/images/hero/hero.jpg';
 
 const LOCATIONS = [
   { name: 'Sector 104', count: 5, img: '/images/properties/noida-apartment-1.jpg' },
@@ -66,10 +67,13 @@ export default function HomePage() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 hero-canvas">
-          <HeroScene />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
+        <img
+          src={HERO_IMAGE}
+          alt="Luxury home overlooking the city"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/50 to-background" />
         <div className="relative z-10 container text-center py-32">
           <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             Verified Homes & Investments in Noida, Greater Noida & Delhi NCR
