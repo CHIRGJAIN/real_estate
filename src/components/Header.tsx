@@ -50,7 +50,7 @@ export default function Header() {
             className="flex items-center gap-2 text-primary hover:text-gold-light transition-colors"
           >
             <MessageCircle className="h-3 w-3" />
-            WhatsApp: +91 98765 43210
+            WhatsApp: +91 9971179127
           </a>
         </div>
       </div>
