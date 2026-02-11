@@ -53,7 +53,7 @@ export default function PropertyDetailsPage() {
   const isCompare = compareList.includes(property.id);
   const images = property.images && property.images.length > 0 ? property.images : ['/placeholder.svg'];
   const similar = allProperties.filter(p => p.id !== property.id && p.location.city === property.location.city).slice(0, 4);
-  const whatsappNumber = agent?.phone ? agent.phone.replace(/\D/g, '') : '919876543210';
+  const whatsappNumber = agent?.phone ? agent.phone.replace(/\D/g, '') : '919971179127';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}.`;
   const emi = useMemo(() => {
     if (emiForm.loanAmount <= 0 || emiForm.rate <= 0 || emiForm.tenure <= 0) return 0;

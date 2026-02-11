@@ -73,10 +73,10 @@ export default function Footer() {
                 <span>hello@ncrrealtyhub.in</span>
               </div>
               <div className="flex flex-wrap gap-2 text-xs">
-                <a href="https://wa.me/919876543210" className="px-3 py-1 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors">
+                <a href="https://wa.me/919971179127" className="px-3 py-1 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors">
                   WhatsApp Us
                 </a>
-                <a href="tel:+919876543210" className="px-3 py-1 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors">
+                <a href="tel:+919971179127" className="px-3 py-1 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors">
                   Call Now
                 </a>
               </div>

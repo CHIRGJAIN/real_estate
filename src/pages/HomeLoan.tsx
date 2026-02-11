@@ -73,12 +73,12 @@ export default function HomeLoanPage() {
           <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4">
             <h3 className="font-heading text-lg font-semibold text-foreground">Get Loan Assistance</h3>
             <p className="text-sm text-muted-foreground">Share your requirements and we will connect you with a loan specialist.</p>
-            <a href="https://wa.me/919876543210" className="w-full">
+            <a href="https://wa.me/919971179127" className="w-full">
               <Button variant="gold" className="w-full gap-2">
                 <MessageCircle className="h-4 w-4" />WhatsApp Loan Desk
               </Button>
             </a>
-            <a href="tel:+919876543210" className="w-full">
+            <a href="tel:+919971179127" className="w-full">
               <Button variant="outline-gold" className="w-full gap-2">
                 <Phone className="h-4 w-4" />Call Now
               </Button>

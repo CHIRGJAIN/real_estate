@@ -51,7 +51,7 @@ export default function ContactPage() {
                 </div>
               </div>
             ))}
-            <a href="https://wa.me/919876543210" className="w-full">
+            <a href="https://wa.me/919971179127" className="w-full">
               <Button variant="gold" className="w-full gap-2">
                 <MessageCircle className="h-4 w-4" />Chat on WhatsApp
               </Button>

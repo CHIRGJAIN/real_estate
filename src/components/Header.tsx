@@ -46,7 +46,7 @@ export default function Header() {
         <div className="container py-2 flex items-center justify-between text-xs text-muted-foreground">
           <span>Now serving Noida, Greater Noida & Delhi NCR | WhatsApp for instant response</span>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919971179127"
             className="flex items-center gap-2 text-primary hover:text-gold-light transition-colors"
           >
             <MessageCircle className="h-3 w-3" />

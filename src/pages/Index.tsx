@@ -250,7 +250,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/listings"><Button variant="gold" size="lg">Browse Listings</Button></Link>
-                  <a href="https://wa.me/919876543210"><Button variant="outline-gold" size="lg">WhatsApp Now</Button></a>
+                  <a href="https://wa.me/919971179127"><Button variant="outline-gold" size="lg">WhatsApp Now</Button></a>
                 </div>
               </div>
             </div>
