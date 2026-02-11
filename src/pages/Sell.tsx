@@ -10,9 +10,9 @@ import { useProperties } from '@/hooks/useProperties';
 
 const STEPS = ['Basic Info', 'Details', 'Pricing', 'Photos', 'Contact'];
 const SAMPLE_PHOTOS = [
-  'https://source.unsplash.com/1200x800/?noida,apartment&sig=91',
-  'https://source.unsplash.com/1200x800/?delhi,ncr,building&sig=92',
-  'https://source.unsplash.com/1200x800/?india,gated,society&sig=93',
+  '/images/properties/noida-apartment-1.jpg',
+  '/images/properties/noida-apartment-2.jpg',
+  '/images/properties/noida-apartment-3.jpg',
 ];
 
 export default function SellPage() {
@@ -134,7 +134,7 @@ export default function SellPage() {
     const locality = form.societyName || form.address.split(',')[0]?.trim() || sector || city;
     const landmark = form.landmark || 'Noida Expressway';
     const agentId = agents.find(a => a.city.toLowerCase() === city.toLowerCase())?.id || agents[0]?.id || '1';
-    const defaultImage = 'https://source.unsplash.com/800x600/?noida,apartment&sig=94';
+    const defaultImage = '/images/properties/noida-apartment-1.jpg';
 
     return {
       id: `custom-${Date.now()}`,

@@ -11,10 +11,10 @@ const MILESTONES = [
 ];
 
 const TEAM = [
-  { name: 'Aarav Khanna', role: 'Managing Director', img: 'https://source.unsplash.com/300x300/?indian,man,portrait&sig=31' },
-  { name: 'Ritika Sharma', role: 'Head of Sales', img: 'https://source.unsplash.com/300x300/?indian,woman,portrait&sig=32' },
-  { name: 'Mohit Bansal', role: 'Project Advisory Lead', img: 'https://source.unsplash.com/300x300/?indian,man,portrait&sig=33' },
-  { name: 'Sneha Iyer', role: 'Marketing & Partnerships', img: 'https://source.unsplash.com/300x300/?indian,woman,portrait&sig=34' },
+  { name: 'Aarav Khanna', role: 'Managing Director', img: '/images/agents/agent-4.jpg' },
+  { name: 'Ritika Sharma', role: 'Head of Sales', img: '/images/agents/agent-5.jpg' },
+  { name: 'Mohit Bansal', role: 'Project Advisory Lead', img: '/images/agents/agent-6.jpg' },
+  { name: 'Sneha Iyer', role: 'Marketing & Partnerships', img: '/images/agents/agent-7.jpg' },
 ];
 
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -67,7 +67,12 @@ export default function AboutPage() {
             {TEAM.map(t => (
               <div key={t.name} className="text-center group">
                 <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4 border-2 border-border group-hover:border-primary transition-colors">
-                  <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                  <img
+                    src={t.img}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+                  />
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-foreground">{t.name}</h3>
                 <p className="text-sm text-muted-foreground">{t.role}</p>

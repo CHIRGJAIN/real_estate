@@ -36,7 +36,12 @@ export default function AgentProfilePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           <div className="bg-card border border-border/50 rounded-xl p-8 text-center">
-            <img src={agent.photo} alt={agent.name} className="w-32 h-32 rounded-full object-cover mx-auto mb-4" />
+            <img
+              src={agent.photo}
+              alt={agent.name}
+              className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+              onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+            />
             <h1 className="font-heading text-2xl font-bold text-foreground mb-1">{agent.name}</h1>
             <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground mb-4">
               <MapPin className="h-4 w-4 text-primary" />{agent.city}

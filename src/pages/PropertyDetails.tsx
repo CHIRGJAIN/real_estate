@@ -51,6 +51,7 @@ export default function PropertyDetailsPage() {
   const isRent = property.purpose === 'rent' || property.purpose === 'commercial';
   const isFav = favorites.includes(property.id);
   const isCompare = compareList.includes(property.id);
+  const images = property.images && property.images.length > 0 ? property.images : ['/placeholder.svg'];
   const similar = allProperties.filter(p => p.id !== property.id && p.location.city === property.location.city).slice(0, 4);
   const whatsappNumber = agent?.phone ? agent.phone.replace(/\D/g, '') : '919876543210';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}.`;
@@ -116,16 +117,26 @@ export default function PropertyDetailsPage() {
         <div className="container mb-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-2 rounded-xl overflow-hidden">
             <button onClick={() => setLightboxIdx(0)} className="md:col-span-2 md:row-span-2 relative group">
-              <img src={property.images[0]} alt={property.title} className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img
+                src={images[0]}
+                alt={property.title}
+                className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+              />
               <div className="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors" />
             </button>
-            {property.images.slice(1, 5).map((img, i) => (
+            {images.slice(1, 5).map((img, i) => (
               <button key={i} onClick={() => setLightboxIdx(i + 1)} className="relative group hidden md:block">
-                <img src={img} alt="" className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img
+                  src={img}
+                  alt=""
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+                />
                 <div className="absolute inset-0 bg-background/0 group-hover:bg-background/10 transition-colors" />
-                {i === 3 && property.images.length > 5 && (
+                {i === 3 && images.length > 5 && (
                   <div className="absolute inset-0 bg-background/60 flex items-center justify-center">
-                    <span className="text-foreground font-semibold">+{property.images.length - 5} more</span>
+                    <span className="text-foreground font-semibold">+{images.length - 5} more</span>
                   </div>
                 )}
               </button>
@@ -414,7 +425,7 @@ export default function PropertyDetailsPage() {
       </div>
 
       {/* Lightbox */}
-      {lightboxIdx !== null && (
+          {lightboxIdx !== null && (
         <div className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center" onClick={() => setLightboxIdx(null)}>
           <button onClick={() => setLightboxIdx(null)} className="absolute top-6 right-6 text-foreground/70 hover:text-foreground" aria-label="Close gallery">
             <X className="h-8 w-8" />
@@ -427,10 +438,11 @@ export default function PropertyDetailsPage() {
             <ChevronLeft className="h-8 w-8" />
           </button>
           <img
-            src={property.images[lightboxIdx]}
+            src={images[lightboxIdx]}
             alt=""
             className="max-h-[85vh] max-w-[90vw] object-contain"
             onClick={e => e.stopPropagation()}
+            onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
           />
           <button
             onClick={e => { e.stopPropagation(); setLightboxIdx(prev => prev !== null ? (prev + 1) % property.images.length : 0); }}
@@ -440,7 +452,7 @@ export default function PropertyDetailsPage() {
             <ChevronRight className="h-8 w-8" />
           </button>
           <div className="absolute bottom-6 text-sm text-muted-foreground">
-            {lightboxIdx + 1} / {property.images.length}
+            {lightboxIdx + 1} / {images.length}
           </div>
         </div>
       )}

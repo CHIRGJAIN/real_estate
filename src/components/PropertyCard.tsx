@@ -15,6 +15,7 @@ export default function PropertyCard({ property, variant = 'grid' }: Props) {
   const [imgIdx, setImgIdx] = useState(0);
   const [favorites, setFavorites] = useLocalStorage<string[]>('favorites', []);
   const [compareList, setCompareList] = useLocalStorage<string[]>('compareList', []);
+  const images = property.images && property.images.length > 0 ? property.images : ['/placeholder.svg'];
 
   const isFav = favorites.includes(property.id);
   const isCompare = compareList.includes(property.id);
@@ -54,7 +55,13 @@ export default function PropertyCard({ property, variant = 'grid' }: Props) {
       <Link to={`/property/${property.id}`} className="block">
         <article className="bg-card border border-border/50 rounded-lg overflow-hidden card-hover flex flex-col sm:flex-row">
           <div className="relative w-full sm:w-72 h-48 sm:h-auto flex-shrink-0">
-            <img src={property.images[0]} alt={property.title} className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={images[0]}
+              alt={property.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+            />
             <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
               {property.verified && <span className="flex items-center gap-1 bg-primary/90 text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full"><BadgeCheck className="h-3 w-3" />Verified</span>}
               {property.newLaunch && <span className="flex items-center gap-1 bg-card/90 text-primary text-[10px] font-semibold px-2 py-0.5 rounded-full border border-primary/30"><Sparkles className="h-3 w-3" />New</span>}
@@ -103,10 +110,11 @@ export default function PropertyCard({ property, variant = 'grid' }: Props) {
       <article className="bg-card border border-border/50 rounded-lg overflow-hidden card-hover">
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
-            src={property.images[imgIdx]}
+            src={images[imgIdx]}
             alt={property.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
+            onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent" />
 
@@ -125,9 +133,9 @@ export default function PropertyCard({ property, variant = 'grid' }: Props) {
             </button>
           </div>
 
-          {property.images.length > 1 && (
+          {images.length > 1 && (
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
-              {property.images.slice(0, 5).map((_, i) => (
+              {images.slice(0, 5).map((_, i) => (
                 <button
                   key={i}
                   onClick={(e) => { e.preventDefault(); e.stopPropagation(); setImgIdx(i); }}

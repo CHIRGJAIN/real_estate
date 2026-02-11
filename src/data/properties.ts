@@ -33,20 +33,41 @@
   popularityScore: number;
 }
 
-const IMAGE_QUERIES = {
-  apartment: ['noida,apartment', 'noida,flat', 'delhi,ncr,skyline', 'india,gated,community'],
-  villa: ['noida,villa', 'india,bungalow', 'luxury,villa,india', 'gated,villa,community'],
-  plot: ['noida,plot', 'residential,plot,india', 'noida,land', 'india,green,plot'],
-  office: ['noida,office,building', 'tech,park,noida', 'india,corporate,office', 'modern,office,india'],
-  shop: ['noida,commercial,shop', 'india,retail,storefront', 'market,india,shop', 'commercial,space,india'],
-  penthouse: ['noida,penthouse', 'luxury,apartment,india', 'delhi,ncr,skyline', 'modern,penthouse,interior'],
+const LOCAL_IMAGES = {
+  apartment: [
+    '/images/properties/noida-apartment-1.jpg',
+    '/images/properties/noida-apartment-2.jpg',
+    '/images/properties/noida-apartment-3.jpg',
+    '/images/properties/noida-apartment-4.jpg',
+  ],
+  villa: [
+    '/images/properties/noida-villa-1.jpg',
+    '/images/properties/noida-villa-2.jpg',
+    '/images/properties/noida-apartment-3.jpg',
+  ],
+  plot: [
+    '/images/properties/noida-plot-1.jpg',
+    '/images/properties/noida-apartment-2.jpg',
+  ],
+  office: [
+    '/images/properties/noida-office-1.jpg',
+    '/images/properties/noida-office-2.jpg',
+    '/images/properties/noida-apartment-4.jpg',
+  ],
+  shop: [
+    '/images/properties/noida-shop-1.jpg',
+    '/images/properties/noida-office-1.jpg',
+  ],
+  penthouse: [
+    '/images/properties/noida-penthouse-1.jpg',
+    '/images/properties/noida-apartment-4.jpg',
+  ],
 } as const;
 
-const buildImage = (query: string, sig: number) =>
-  `https://source.unsplash.com/1200x800/?${query}&sig=${sig}`;
-
-const getImages = (type: keyof typeof IMAGE_QUERIES, seed: number) =>
-  IMAGE_QUERIES[type].map((query, idx) => buildImage(query, seed + idx));
+const getImages = (type: keyof typeof LOCAL_IMAGES, seed: number) => {
+  const pool = LOCAL_IMAGES[type] || LOCAL_IMAGES.apartment;
+  return Array.from({ length: 4 }, (_, idx) => pool[(seed + idx) % pool.length]);
+};
 
 const AMENITIES_POOL = [
   'Power Backup',

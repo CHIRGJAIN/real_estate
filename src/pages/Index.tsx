@@ -9,15 +9,15 @@ import StatsCounter from '@/components/StatsCounter';
 import { useProperties } from '@/hooks/useProperties';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const heroBg = 'https://source.unsplash.com/1600x900/?noida,skyline,buildings';
+const heroBg = '/images/properties/noida-apartment-4.jpg';
 
 const LOCATIONS = [
-  { name: 'Sector 104', count: 5, img: 'https://source.unsplash.com/400x500/?noida,apartment&sig=1' },
-  { name: 'Sector 137', count: 4, img: 'https://source.unsplash.com/400x500/?noida,metro,building&sig=2' },
-  { name: 'Sector 150', count: 4, img: 'https://source.unsplash.com/400x500/?noida,green,community&sig=3' },
-  { name: 'Pari Chowk', count: 3, img: 'https://source.unsplash.com/400x500/?greater,noida,buildings&sig=4' },
-  { name: 'Techzone 4', count: 3, img: 'https://source.unsplash.com/400x500/?noida,modern,apartment&sig=5' },
-  { name: 'Indirapuram', count: 3, img: 'https://source.unsplash.com/400x500/?ghaziabad,apartments&sig=6' },
+  { name: 'Sector 104', count: 5, img: '/images/properties/noida-apartment-1.jpg' },
+  { name: 'Sector 137', count: 4, img: '/images/properties/noida-office-1.jpg' },
+  { name: 'Sector 150', count: 4, img: '/images/properties/noida-apartment-2.jpg' },
+  { name: 'Pari Chowk', count: 3, img: '/images/properties/noida-apartment-3.jpg' },
+  { name: 'Techzone 4', count: 3, img: '/images/properties/noida-office-2.jpg' },
+  { name: 'Indirapuram', count: 3, img: '/images/properties/noida-apartment-4.jpg' },
 ];
 
 const SERVICES = [
@@ -30,9 +30,9 @@ const SERVICES = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Rahul Malhotra', role: 'Bought 3BHK, Sector 104', text: 'NCR RealtyHub guided us from shortlist to registry. The process was smooth and transparent.', rating: 5, avatar: 'https://source.unsplash.com/100x100/?indian,man,portrait&sig=21' },
-  { name: 'Ankita Joshi', role: 'Rented near Expressway', text: 'Needed a rental close to my office. Got options in 2 days and finalized quickly.', rating: 5, avatar: 'https://source.unsplash.com/100x100/?indian,woman,portrait&sig=22' },
-  { name: 'Vikram Singh', role: 'Investor, Greater Noida', text: 'Their market insights for new launches helped me lock a great deal under ?1 Cr.', rating: 4, avatar: 'https://source.unsplash.com/100x100/?indian,man,portrait&sig=23' },
+  { name: 'Rahul Malhotra', role: 'Bought 3BHK, Sector 104', text: 'NCR RealtyHub guided us from shortlist to registry. The process was smooth and transparent.', rating: 5, avatar: '/images/agents/agent-1.jpg' },
+  { name: 'Ankita Joshi', role: 'Rented near Expressway', text: 'Needed a rental close to my office. Got options in 2 days and finalized quickly.', rating: 5, avatar: '/images/agents/agent-2.jpg' },
+  { name: 'Vikram Singh', role: 'Investor, Greater Noida', text: 'Their market insights for new launches helped me lock a great deal under ₹1 Cr.', rating: 4, avatar: '/images/agents/agent-3.jpg' },
 ];
 
 function RevealSection({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {

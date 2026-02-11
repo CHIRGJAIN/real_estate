@@ -35,7 +35,12 @@ export default function AgentsPage() {
             <Link key={agent.id} to={`/agents/${agent.id}`} className="group">
               <div className="bg-card border border-border/50 rounded-xl overflow-hidden card-hover">
                 <div className="relative aspect-square overflow-hidden">
-                  <img src={agent.photo} alt={agent.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img
+                    src={agent.photo}
+                    alt={agent.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                 </div>
                 <div className="p-5 -mt-12 relative z-10">

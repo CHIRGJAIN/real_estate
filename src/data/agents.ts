@@ -17,7 +17,7 @@ export const agents: Agent[] = [
   {
     id: '1',
     name: 'Amit Sharma',
-    photo: 'https://source.unsplash.com/400x400/?indian,man,portrait&sig=11',
+    photo: '/images/agents/agent-1.jpg',
     phone: '+91 98765 43210',
     email: 'amit.sharma@ncrrealtyhub.in',
     city: 'Noida',
@@ -31,7 +31,7 @@ export const agents: Agent[] = [
   {
     id: '2',
     name: 'Neha Gupta',
-    photo: 'https://source.unsplash.com/400x400/?indian,woman,portrait&sig=12',
+    photo: '/images/agents/agent-2.jpg',
     phone: '+91 98765 43211',
     email: 'neha.gupta@ncrrealtyhub.in',
     city: 'Noida',
@@ -45,7 +45,7 @@ export const agents: Agent[] = [
   {
     id: '3',
     name: 'Rohit Verma',
-    photo: 'https://source.unsplash.com/400x400/?indian,man,portrait&sig=13',
+    photo: '/images/agents/agent-3.jpg',
     phone: '+91 98765 43212',
     email: 'rohit.verma@ncrrealtyhub.in',
     city: 'Greater Noida',
@@ -59,7 +59,7 @@ export const agents: Agent[] = [
   {
     id: '4',
     name: 'Priya Singh',
-    photo: 'https://source.unsplash.com/400x400/?indian,woman,portrait&sig=14',
+    photo: '/images/agents/agent-4.jpg',
     phone: '+91 98765 43213',
     email: 'priya.singh@ncrrealtyhub.in',
     city: 'Greater Noida',
@@ -73,7 +73,7 @@ export const agents: Agent[] = [
   {
     id: '5',
     name: 'Arjun Mehta',
-    photo: 'https://source.unsplash.com/400x400/?indian,man,portrait&sig=15',
+    photo: '/images/agents/agent-5.jpg',
     phone: '+91 98765 43214',
     email: 'arjun.mehta@ncrrealtyhub.in',
     city: 'Delhi NCR',
@@ -87,7 +87,7 @@ export const agents: Agent[] = [
   {
     id: '6',
     name: 'Kavita Rao',
-    photo: 'https://source.unsplash.com/400x400/?indian,woman,portrait&sig=16',
+    photo: '/images/agents/agent-6.jpg',
     phone: '+91 98765 43215',
     email: 'kavita.rao@ncrrealtyhub.in',
     city: 'Ghaziabad',
@@ -101,7 +101,7 @@ export const agents: Agent[] = [
   {
     id: '7',
     name: 'Siddharth Jain',
-    photo: 'https://source.unsplash.com/400x400/?indian,man,portrait&sig=17',
+    photo: '/images/agents/agent-7.jpg',
     phone: '+91 98765 43216',
     email: 'siddharth.jain@ncrrealtyhub.in',
     city: 'Noida',
@@ -115,7 +115,7 @@ export const agents: Agent[] = [
   {
     id: '8',
     name: 'Ananya Kapoor',
-    photo: 'https://source.unsplash.com/400x400/?indian,woman,portrait&sig=18',
+    photo: '/images/agents/agent-8.jpg',
     phone: '+91 98765 43217',
     email: 'ananya.kapoor@ncrrealtyhub.in',
     city: 'Noida',
